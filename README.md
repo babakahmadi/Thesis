@@ -30,7 +30,7 @@
  * internal measures: cohesion and separation <br>
  * external measures: entropy and purity <br>
 
-<b>Algorithms</b>
+<b>Algorithms:</b>
 
  * <a href="http://scikit-learn.org/stable/auto_examples/cluster/plot_cluster_comparison.html#example-cluster-plot-cluster-comparison-py">comparing different algorithms</a>
  * <a href="http://papers.nips.cc/paper/2388-learning-spectral-clustering.pdf">Good roadmap</a> <br><br>
@@ -53,6 +53,7 @@
  
  * dbscan visualization : <a href="http://www.naftaliharris.com/blog/visualizing-dbscan-clustering/">reference</a> <br>
  * dbscan code: <a href="http://scikit-learn.org/stable/auto_examples/cluster/plot_dbscan.html">code</a>
+ * MDS(MultiDimensional Scaling): <a href="http://scikit-learn.org/stable/auto_examples/manifold/plot_mds.html">code</a>
 
 
 ** some packages: **
@@ -62,6 +63,9 @@
 ** Dataset: **
 
  * stanford dataset: <a href="http://snap.stanford.edu/data/">this</a><br>
- * ...
+ * list of repositories: <a href="http://www.datasciencecentral.com/profiles/blogs/top-20-open-data-sources">reference </a>
 
 
+** for documentation: **
+
+ * introduction to cluster analysis: <a href="http://www-users.cs.umn.edu/~han/dmclass/cluster_survey_10_02_00.pdf">reference</a><br>
