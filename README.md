@@ -17,12 +17,12 @@
 	- SSE or entropy
 	- cohesion and separation
 
-**Evaluation Metrics for clustering:(<a href="">reference</a>)**
+**Evaluation Metrics for clustering:(<a href="#">reference</a>)**
 
- * **Conductance: <a href="">reference</a>** 
- * **Coverage: <a href="">reference</a> **
- * **Modularity: <a href="">reference</a> **
- * **Performance: <a href="">reference</a> **
+ * **Conductance: <a href="#">reference</a>** 
+ * **Coverage: <a href="#">reference</a> **
+ * **Modularity: <a href="#">reference</a> **
+ * **Performance: <a href="#">reference</a> **
  * **Silhouette index : <a href="http://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_silhouette_analysis.html">reference</a> **
 
 <b>Validation</b>
