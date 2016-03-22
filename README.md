@@ -27,24 +27,41 @@
 
 <b>Validation</b>
 
+ * internal measures: cohesion and separation <br>
+ * external measures: entropy and purity <br>
 
 <b>Algorithms</b>
 
-<a href="http://scikit-learn.org/stable/auto_examples/cluster/plot_cluster_comparison.html#example-cluster-plot-cluster-comparison-py">comparing different algorithms</a>
+ * <a href="http://scikit-learn.org/stable/auto_examples/cluster/plot_cluster_comparison.html#example-cluster-plot-cluster-comparison-py">comparing different algorithms</a>
+ * <a href="http://papers.nips.cc/paper/2388-learning-spectral-clustering.pdf">Good roadmap</a> <br><br>
 
-<a href="http://papers.nips.cc/paper/2388-learning-spectral-clustering.pdf">Good roadmap</a> <br><br>
-cluster validation: <a href="http://www.cs.kent.edu/~jin/DM08/ClusterValidation.pdf">this</a>  --> idea: <u>using binary search</u> <br>
-cluster validation(statistical approach) : <a href="http://web.itu.edu.tr/sgunduz/courses/verimaden/paper/validity_survey.pdf">this</a> <br>
-R package: <a href="https://cran.r-project.org/web/packages/clValid/vignettes/clValid.pdf">this</a> <br>
+** some references: **
 
-dbscan visualization : <a href="http://www.naftaliharris.com/blog/visualizing-dbscan-clustering/">this</a> <br>
-good review: <a href="http://www.cs.kent.edu/~jin/DM08/cluster.pdf">this</a> <br>
-validation methods: <a href="http://www.cs.kent.edu/~jin/DM08/ClusterValidation.pdf">this</a><br>
-
-internal measures: cohesion and separation <br>
-external measures: entropy and purity <br>
+ * cluster validation: <a href="http://www.cs.kent.edu/~jin/DM08/ClusterValidation.pdf">reference</a>  --> idea: <u>using binary search</u> <br>
+ * cluster validation(statistical approach) : <a href="http://web.itu.edu.tr/sgunduz/courses/verimaden/paper/validity_survey.pdf">reference</a> <br>
 
 
-stanford dataset: <a href="http://snap.stanford.edu/data/">this</a><br>
+** good Tutorials: **
+
+ * good review: <a href="http://www.cs.kent.edu/~jin/DM08/cluster.pdf">this</a> <br>
+ * validation methods: <a href="http://www.cs.kent.edu/~jin/DM08/ClusterValidation.pdf">this</a><br>
+ * ...
+
+
+
+** some implementation: **
+ 
+ * dbscan visualization : <a href="http://www.naftaliharris.com/blog/visualizing-dbscan-clustering/">reference</a> <br>
+ * dbscan code: <a href="http://scikit-learn.org/stable/auto_examples/cluster/plot_dbscan.html">code</a>
+
+
+** some packages: **
+
+ * R package: <a href="https://cran.r-project.org/web/packages/clValid/vignettes/clValid.pdf">this</a> <br>
+
+** Dataset: **
+
+ * stanford dataset: <a href="http://snap.stanford.edu/data/">this</a><br>
+ * ...
 
 
