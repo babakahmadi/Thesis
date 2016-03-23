@@ -21,9 +21,9 @@ Difference between supervised and unsupervised:
 **Evaluation Metrics for clustering:( [reference](#) )**
 
  * **Conductance: [reference](#)** 
- * **Coverage: [reference](#) **
- * **Modularity: [reference](#) **
- * **Performance: [reference](#) **
+ * **Coverage: [reference](#)**
+ * **Modularity: [reference](#)**
+ * **Performance: [reference](#)**
  * **Silhouette index : [reference](http://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_silhouette_analysis.html)**
 
 **Validation:**
