@@ -46,8 +46,9 @@
 
 #### **some references:**
 
- * cluster validation: [reference](http://www.cs.kent.edu/~jin/DM08/ClusterValidation.pdf)  --> idea: *using binary search* <br>
- * cluster validation(statistical approach) : [reference](http://web.itu.edu.tr/sgunduz/courses/verimaden/paper/validity_survey.pdf) <br>
+ * cluster validation: [reference](http://www.cs.kent.edu/~jin/DM08/ClusterValidation.pdf)  --> idea: *using binary search* 
+ * cluster validation(statistical approach) : [reference](http://web.itu.edu.tr/sgunduz/courses/verimaden/paper/validity_survey.pdf)
+ * for proofs: [reference](http://www.math.iastate.edu/thesisarchive/PhD/LiuSijiaPhDSS11.pdf)  --> chapter 3 
 
 
 #### **good Tutorials:**
