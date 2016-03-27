@@ -40,7 +40,7 @@
 #### **Algorithms:**
 
  * [comparing different algorithms](http://scikit-learn.org/stable/auto_examples/cluster/plot_cluster_comparison.html#example-cluster-plot-cluster-comparison-py)
- * [Good roadmap](http://papers.nips.cc/paper/2388-learning-spectral-clustering.pdf)
+ * [Good roadmap](http://www.eecs.berkeley.edu/Pubs/TechRpts/2003/CSD-03-1249.pdf), [Completed Paper](http://www.di.ens.fr/~fbach/jmlrfinal_bach06b.pdf)
  * SOM (Self-organizing Map)
 
 
@@ -49,6 +49,10 @@
  * cluster validation: [reference](http://www.cs.kent.edu/~jin/DM08/ClusterValidation.pdf)  --> idea: *using binary search* 
  * cluster validation(statistical approach) : [reference](http://web.itu.edu.tr/sgunduz/courses/verimaden/paper/validity_survey.pdf)
  * for proofs: [reference](http://www.math.iastate.edu/thesisarchive/PhD/LiuSijiaPhDSS11.pdf)  --> chapter 3 
+ * solve two weaknesses of spectral clustering: [reference](https://papers.nips.cc/paper/2766-fixing-two-weaknesses-of-the-spectral-method.pdf)
+ * consistency of spectral clustering: [reference](http://www.kyb.mpg.de/fileadmin/user_upload/files/publications/pdfs/pdf3199.pdf)
+ * limits of spectral clustering: [reference](http://www.kyb.mpg.de/fileadmin/user_upload/files/publications/pdfs/pdf2775.pdf)
+ * random walk survey: [reference](http://www.cs.elte.hu/~lovasz/erdos.pdf)
 
 
 #### **good Tutorials:**
