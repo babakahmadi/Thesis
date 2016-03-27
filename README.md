@@ -86,6 +86,7 @@
 #### **for documentation:**
 
  * introduction to cluster analysis: [reference](http://www-users.cs.umn.edu/~han/dmclass/cluster_survey_10_02_00.pdf)
+ * Laplacian properties: [reference](http://www.sfu.ca/~mohar/Papers/Spec.pdf), - , [reference](http://www.fmf.uni-lj.si/~mohar/Papers/Montreal.pdf)
 
 
 #### **base papers:**
