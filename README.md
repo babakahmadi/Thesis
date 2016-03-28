@@ -68,6 +68,7 @@
  * dbscan visualization : [reference](http://www.naftaliharris.com/blog/visualizing-dbscan-clustering/)
  * dbscan code: [code](http://scikit-learn.org/stable/auto_examples/cluster/plot_dbscan.html)
  * MDS(MultiDimensional Scaling): [code](http://scikit-learn.org/stable/auto_examples/manifold/plot_mds.html)
+ * numpy: [tutorial](http://www.scipy-lectures.org/intro/numpy/numpy.html)
 
 
 #### __some packages:__
