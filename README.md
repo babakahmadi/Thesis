@@ -49,10 +49,18 @@
  * cluster validation: [reference](http://www.cs.kent.edu/~jin/DM08/ClusterValidation.pdf)  --> idea: *using binary search* 
  * cluster validation(statistical approach) : [reference](http://web.itu.edu.tr/sgunduz/courses/verimaden/paper/validity_survey.pdf)
  * for proofs: [reference](http://www.math.iastate.edu/thesisarchive/PhD/LiuSijiaPhDSS11.pdf)  --> chapter 3 
- * solve two weaknesses of spectral clustering: [reference](https://papers.nips.cc/paper/2766-fixing-two-weaknesses-of-the-spectral-method.pdf)
+ * solve two weaknesses of spectral clustering: [reference](https://papers.nips.cc/paper/2766-fixing-two-weaknesses-of-the-spectral-method.pdf) --> method instead of k-means
+ * diffusion maps, spectral clustering and eigenfunctions of fokker-planck operators: [reference](http://papers.nips.cc/paper/2942-diffusion-maps-spectral-clustering-and-eigenfunctions-of-fokker-planck-operators.pdf) --> euclidean distance in new representation has a meaningful description
  * consistency of spectral clustering: [reference](http://www.kyb.mpg.de/fileadmin/user_upload/files/publications/pdfs/pdf3199.pdf)
  * limits of spectral clustering: [reference](http://www.kyb.mpg.de/fileadmin/user_upload/files/publications/pdfs/pdf2775.pdf)
  * random walk survey: [reference](http://www.cs.elte.hu/~lovasz/erdos.pdf)
+ * kdd bipartite spectral: [reference](http://www.cs.utexas.edu/users/inderjit/public_papers/kdd_bipartite.pdf)
+ * ........
+ * co-training spectral: [ICML2011](http://machinelearning.wustl.edu/mlpapers/paper_files/ICML2011Kumar_272.pdf)
+ * mining clustering dimensions: [ICML2010](http://machinelearning.wustl.edu/mlpapers/paper_files/icml2010_DasguptaN10.pdf)
+ * Large-Scale Multi-View Spectral Clustering via Bipartite Graph : [AAAI2015](http://www.contrib.andrew.cmu.edu/~uqxchan1/papers/Yeqing_Li_AAAI2015.pdf)
+ * Incremental Spectral Clustering with the Normalised Laplacian: [NIPS2011](https://hal.inria.fr/hal-00745666/document)
+
 
 
 #### **good Tutorials:**
@@ -100,5 +108,6 @@
  * **for Kernel:** [  Bernhard Scholkopf](http://dip.sun.ac.za/~hanno/tw796/lesings/mlss06au_scholkopf_lk.pdf)
  * __good papers:__ [University of Washington](http://www.stat.washington.edu/spectral/)
  * __regularized spectral clustering:__[jmlr](http://www.stat.washington.edu/mmp/Papers/jmlr-reg-super-learning-revised.pdf)
+ * __model based clustering(select number of clusters):__ [University of Mishigan](http://www.dtic.mil/cgi-bin/GetTRDoc?AD=ADA458798)
 
 

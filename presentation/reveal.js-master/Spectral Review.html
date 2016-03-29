@@ -20,6 +20,9 @@
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
+		<style type="text/css">
+			h3 { color: green; }
+		</style>
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
@@ -28,6 +31,7 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+		
 
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -41,15 +45,19 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1><b style="color:green">Spectral</b> <i style="color:blue">Clustering</i></h1>
+					<h1><b style="color:green">Spectral</b> <i style="color:pink">Clustering</i></h1>
 					<p>
 						<small>Created by <a href="#">Babak Ahmadi</a> </small><br>
 						<small>Shiraz University</small>
 					</p>
 				</section>
+				<!-- 2 -->
 				<section>
-						<h3 style="color:green"> Graph Notations </h3>
+					<h3 style="color:green"> Graph Notations </h3>
 					<section>
+						<aside class="notes">
+							this slide has lots of formulas
+						</aside>
 						<p>
 							<br>
 							$ G = (V,E) $ <br><br>
@@ -59,12 +67,169 @@
 						</p>
 					</section>
 					<section>
+						$$ D = \begin{pmatrix}
+						    d_1     & \cdots & 0 \\
+						     \vdots & \ddots & 0 \\
+						     0      & 0      & d_n \\
+						  	\end{pmatrix} $$ 
+						$$ |A| := the \ number \ of \ vertices \ in \ A $$ <br>
+						$$ W(A,B) := \sum_{i\in A,j\in B} w_{ij} $$ <br>
+						$$ vol(A) := \sum_{i\in A} d_i $$
+					</section>
+				</section>
+				<!-- 3 -->
+				<section>
+					<h3 style="color:green"> Similarity Graphs </h3>
+					<section>
+						<ul>
+							<li>$\epsilon$-neighborhood graph</li>
+								<ul> <small style='color:yellow'> 
+									we connect all points whose pairwise distances are smaller than $\epsilon$
+								</small></ul>
+							<li>$k$-nearest neighbor graph</li>
+								<ul> 
+									<small><span style="color:yellow">find first $k$ neighbors for each vertex </span>
+										<li>$k$-nearest neighbors</li>
+										<li>mutual $k$-nearest neighbor</li>
+									</small>
+								</ul>
+							<li>fully connected graph</li>
+								<ul><small style="color:yellow">
+									between each two points we add edge based on some functions<br><br>
+									$$s(x_i,x_j) = exp(\frac{-||x_i-x_j||^2}{2\sigma^2})$$
+								</small></ul>
+						</ul>
+					</section>
+				</section>
+
+				<!-- 4 -->
+				<section>
+					<h3 style="color:green"> Graph Laplacian </h3>
+					<section>
+						<ul>
+						<li>$$ L = D - W $$</li>
+						<li>$ L$ is <i style="color:red">symmetric</i> and <i style="color:red">positive semi-definite</i> </li>
+						<li>$$ f^TLf = \frac{1}{2} \sum_{i,j=1}^n w_{ij}(f_i-f_j)^2 \ \ \ (?)$$</li>
+						<li> smallest eigenvalue of $L$ is 0, the corresponding eigenvector is $1$ </li>
+						<li> $$ 0 = \lambda_1 \le \lambda_2 \le ... \le \lambda_n$$ </li>
+						</ul>
+					</section>
+					<section>
+						<h5 style="color:red; text-align: left;">Proof:</h5>
+						$$ f^TLf = f^TDf - f^TWf \\ =  \sum_{i=1}^n d_i f_i^2 - \sum_{i,j=1}^n f_i f_j w_{ij} \\ 
+						 = \frac{1}{2} (\sum_{i=1}^n d_i f_i^2 - 2 \sum_{i,j=1}^n f_if_j w_{ij} + \sum_{j=1}^n d_j f_j^2) \\
+						 = \frac{1}{2} \sum_{i,j=1}^n w_{ij}(f_i-f_j)^2.
+						$$
+					</section>
+					<section>
+						<h5 style="color:red; text-align: left;">number of clusters:</h5>
+						$$ 0 = f^TLf = \sum_{i,j=1}^n w_{ij}(f_i-f_j)^2$$
+						<h5 style="color:red; text-align: left;">block view:</h5>
+						$$ L = \begin{pmatrix}
+						    L_1     & \cdots & 0 \\
+						     \vdots & \ddots & 0 \\
+						     0      & 0      & L_k \\
+						  	\end{pmatrix} $$ 
+					</section>
+					<section>
+						<h5 style="color:red; text-align: left;">Normalized Laplacian:</h5>
+						<span style="color:yellow">$L_{sym}$</span> $  := D^{-1/2}LD^{-1/2} \\ = I - D^{-1/2}WD^{-1/2} $<br><br>
+						<span style="color:yellow">$L_{rw}$</span> $  := D^{-1}L \\ = I - D^{-1}W $
+					</section>
+					<section>
+						<ul>
+							<li>
+								$$ f^T L_{sym} f = \frac{1}{2} \sum_{i,j=1}^n w_{ij}(\frac{f_i}{\sqrt{d_i}} - \frac{f_j}{\sqrt{d_j}})^2 $$
+							</li>
+							<br>
+							<li>
+							$ \lambda $ and $u$ of $L_{rw}$ exists <i>iff</i> : $Lu = \lambda D u$
+							</li>
+							<br>
+							<li>
+								$\lambda$ and  $u$ of $L_{rw}$  <i>iff</i> :  $\lambda$ and <span style="color:yellow">$(w= D^{1/2}u)$ </span> of $L_{sym}$  
+							</li>
+							<br>
+							<li>
+								number of connected components is like unnormalized Laplacian
+							</li>
+						</ul>
+					</section>
+				</section>
+				<!-- 5 -->
+				<section>
+					<h3 style="color:green"> Spectral Clustering Algorithms </h3>
+					<section>
+						<h5 style="color:red; text-align: left;">Unnormalized spectral clustering:</h5>
+						<small text-align="right"><code class="hljs" data-trim contenteditable>
+							<b style="color:green">Input:</b>Similarity matrix $S \in R^{nxn}$ , number $k$ of clusters to construct.<br>
+							<ul>
+								<li>Construct a similarity graph. Let W be its weighted adjacency matrix.</li>
+								<li>Compute the unnormalized Laplacian $L$.</li>
+								<li>Compute the first k eigenvectors $u_1, ... , u_k$ of $L$.</li>
+								<li>Let U n×k be the matrix containing the vectors $u_1, ... , u_k$ as columns.</li>
+								<li>For $i = 1, ... , n$, let yik be the vector corresponding to the i-th row of U.</li>
+								<li>Cluster the points $(y_i)i=1,...,n$ in $k$ with the $k$-means algorithm intoclusters $C_1, ... , C_k$.</li>
+							</ul><br>
+
+							<b style="color:green">Output:</b> Clusters $A_1, . . . , A_k$ with $A_i = \{j | y_j \in C_i \}$.
+
+					</code></small>
+					</section>
+					<section>
+						<h5 style="color:red; text-align: left;">Normalized spectral clustering(Shi, Malik):</h5>
+						<small text-align="right"><code class="hljs" data-trim contenteditable>
+						<ul>
+							<b style="color:green">Input:</b>Similarity matrix $S \in R^{nxn}$ , number $k$ of clusters to construct.<br>
+							<li>Construct a similarity graph.Let $W$ be its weighted adjacency matrix.</li>
+							<li>Compute the unnormalized Laplacian $L$.</li>
+							<li>Compute the first $k$ eigenvectors $u_1, . . . , u_k$ of the generalized eigenproblem $Lu = \lambda Du$.</li>
+							<li>Let U n×k be the matrix containing the vectors $u_1, . . . , u_k$ as columns.</li>
+							<li>For $i = 1, ... , n$, let yi k be the vector corresponding to the i-th row of U.</li>
+							<li>Cluster the points $(y_i)i=1,...,n$ in $k$ with the $k$-means algorithm into clusters $C_1, . . . , C_k$.</li>
+						</ul><br>
+						<b style="color:green">Output:</b> Clusters $A_1, . . . , A_k$ with $A_i = \{j | y_j \in C_i \}$.
+					</code></small>
+					</section>
+					<section>
+						<h5 style="color:red; text-align: left;">Normalized spectral clustering(Ng, Jordan):</h5>
+						<small text-align="right"><code class="hljs" data-trim contenteditable>
+						<ul>
+							<b style="color:green">Input:</b>Similarity matrix $S \in R^{nxn}$ , number $k$ of clusters to construct.<br>
+							<li>Construct a similarity graph. Let $W$ be its weighted adjacency matrix.</li>
+							<li>Compute the normalized Laplacian $L_{sym}$.</li>
+							<li>Compute the first k eigenvectors $u_1, ... , u_k$ of $L_{sym}$.</li>
+							<li>Let $U \in R^{n×k}$ be the matrix containing the vectors $u_1, ... , u_k} as columns.</li>
+							<li>Form the matrix $T \in R^{n×k}$ from $U$ by normalizing the rows to norm $1$, that is set $t_{ij}=u_{ij}/(\sum_k u_{ik}^2)^{1/2}$</li>
+							<li>For $i = 1, ... , n$, let $y_i \in R^k$ be the vector corresponding to the i-th row of $T$.</li>
+							<li>Cluster the points $(y_i)_{i=1,...,n}$ with the $k$-means algorithm into clusters $C_1, ... , C_k$.</li>
+
+						</ul><br>
+						<b style="color:green">Output:</b> Clusters $A_1, . . . , A_k$ with $A_i = \{j | y_j \in C_i \}$.
+					</code></small>
+					</section>
+				</section>
+
+				<!-- 6 -->
+				<section>
+					<h3 style="color:green"> Visual 3 methods for some data </h3>
+					<section>
+						<h5 style="color:red; text-align: left;">Two Gaussian data:</h5>
+					</section>
+					<section>
+						<h5 style="color:red; text-align: left;">Two Disks:</h5>
+					</section>
+					<section>
+						<h5 style="color:red; text-align: left;">Two parabola:</h5>
+					</section>
+				</section>
+
+				<section>
 						$$ W(A,B) := \sum_{i\in A,j\in B} w_{ij} $$ <br>
 						$$ |A| := the \ number \ of \ vertices \ in \ A $$ <br>
 						$$ vol(A) := \sum_{i\in A} d_i $$
 					</section>
 				</section>
-
 				<section>
 					<section>
 						WHERE ARE YOU?
@@ -433,8 +598,9 @@ Reveal.addEventListener( 'customevent', function() {
 				progress: true,
 				history: true,
 				center: true,
+				slideNumber: true,
 
-				transition: 'convex', // none/fade/slide/convex/concave/zoom
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
 				math:{
 					mathjax: 'http://cdn.mathjax.org/mathjax/latest/MathJax.js',
