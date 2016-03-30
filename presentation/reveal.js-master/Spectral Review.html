@@ -72,8 +72,8 @@
 						     \vdots & \ddots & 0 \\
 						     0      & 0      & d_n \\
 						  	\end{pmatrix} $$ 
-						$$ |A| := the \ number \ of \ vertices \ in \ A $$ <br>
-						$$ W(A,B) := \sum_{i\in A,j\in B} w_{ij} $$ <br>
+						$$ |A| := \text{number of vertices in } A $$ <br>
+						$$ W(A,B) := \sum_{i\in A,j\in B} w_{ij} $$ 
 						$$ vol(A) := \sum_{i\in A} d_i $$
 					</section>
 				</section>
@@ -82,22 +82,25 @@
 					<h3 style="color:green"> $\text{Similarity Graphs}$ </h3>
 					<section>
 						<ul>
-							<li>$\epsilon$-neighborhood graph</li>
+							<li class="fragment">$\epsilon\text{-neighborhood graph}$
 								<ul> <small style='color:yellow'> 
-									we connect all points whose pairwise distances are smaller than $\epsilon$
+									$\text{we connect all points whose pairwise distances are smaller than } \epsilon$
 								</small></ul>
-							<li>$k$-nearest neighbor graph</li>
+							</li>
+							<li class="fragment">$k\text{-nearest neighbor graph}$
 								<ul> 
-									<small><span style="color:yellow">find first $k$ neighbors for each vertex </span>
-										<li>$k$-nearest neighbors</li>
-										<li>mutual $k$-nearest neighbor</li>
+									<small>$\color{yellow}{\text{find first $k$ neighbors for each vertex}}$
+										<li>$k\text{-nearest neighbors}$</li>
+										<li>$\text{mutual $k$-nearest neighbor}$</li>
 									</small>
 								</ul>
-							<li>fully connected graph</li>
+							</li>
+							<li class="fragment">$\text{fully connected graph}$
 								<ul><small style="color:yellow">
-									between each two points we add edge based on some functions<br><br>
+									$\text{between each two points we add edge based on some functions}$<br><br>
 									$$s(x_i,x_j) = exp(\frac{-||x_i-x_j||^2}{2\sigma^2})$$
 								</small></ul>
+							</li>
 						</ul>
 					</section>
 				</section>
@@ -107,24 +110,24 @@
 					<h3 style="color:green"> $\text{Graph Laplacian}$ </h3>
 					<section>
 						<ul>
-						<li>$$ L = D - W $$</li>
-						<li>$ L$ is <i style="color:red">symmetric</i> and <i style="color:red">positive semi-definite</i> </li>
-						<li>$$ f^TLf = \frac{1}{2} \sum_{i,j=1}^n w_{ij}(f_i-f_j)^2 \ \ \ (?)$$</li>
-						<li> smallest eigenvalue of $L$ is 0, the corresponding eigenvector is $1$ </li>
-						<li> $$ 0 = \lambda_1 \le \lambda_2 \le ... \le \lambda_n$$ </li>
+						<li class="fragment">$ L = D - W $</li>
+						<li class="fragment">$\text{ $L$ is symmetric and positive semi-definite}$ </li>
+						<li class="fragment">$ f^TLf = \frac{1}{2} \sum_{i,j=1}^n w_{ij}(f_i-f_j)^2 \ \ \ (?)$</li>
+						<li class="fragment">$\lambda_1=0 \text{ and } v_1 = 1 $ </li>
+						<li class="fragment"> $ 0 = \lambda_1 \le \lambda_2 \le ... \le \lambda_n$ </li>
 						</ul>
 					</section>
 					<section>
-						<h5 style="color:red; text-align: left;">Proof:</h5>
+						<h5 style="text-align: left;">$\color{pink}{\text{Proof:}}$</h5>
 						$$ f^TLf = f^TDf - f^TWf \\ =  \sum_{i=1}^n d_i f_i^2 - \sum_{i,j=1}^n f_i f_j w_{ij} \\ 
 						 = \frac{1}{2} (\sum_{i=1}^n d_i f_i^2 - 2 \sum_{i,j=1}^n f_if_j w_{ij} + \sum_{j=1}^n d_j f_j^2) \\
 						 = \frac{1}{2} \sum_{i,j=1}^n w_{ij}(f_i-f_j)^2.
 						$$
 					</section>
 					<section>
-						<h5 style="color:red; text-align: left;">number of clusters:</h5>
+						<h5 style="text-align: left;">$\color{pink}{\text{number of clusters:}}$</h5>
 						$$ 0 = f^TLf = \sum_{i,j=1}^n w_{ij}(f_i-f_j)^2$$
-						<h5 style="color:red; text-align: left;">block view:</h5>
+						<h5 style="color:red; text-align: left;">$\color{pink}{\text{block view:}}$</h5>
 						$$ L = \begin{pmatrix}
 						    L_1     & \cdots & 0 \\
 						     \vdots & \ddots & 0 \\
@@ -132,26 +135,27 @@
 						  	\end{pmatrix} $$ 
 					</section>
 					<section>
-						<h5 style="color:red; text-align: left;">Normalized Laplacian:</h5>
+						<h5 style="color:red; text-align: left;">$\color{pink}{\text{Normalized Laplacian:}}$</h5>
 						<span style="color:yellow">$L_{sym}$</span> $  := D^{-1/2}LD^{-1/2} \\ = I - D^{-1/2}WD^{-1/2} $<br><br>
 						<span style="color:yellow">$L_{rw}$</span> $  := D^{-1}L \\ = I - D^{-1}W $
 					</section>
 					<section>
 						<ul>
-							<li>
-								$$ f^T L_{sym} f = \frac{1}{2} \sum_{i,j=1}^n w_{ij}(\frac{f_i}{\sqrt{d_i}} - \frac{f_j}{\sqrt{d_j}})^2 $$
+							<li class="fragment">
+								$ f^T L_{sym} f = \frac{1}{2} \sum_{i,j=1}^n w_{ij}
+								(\frac{f_i}{\sqrt{d_i}} - \frac{f_j}{\sqrt{d_j}})^2$
 							</li>
 							<br>
-							<li>
-							$ \lambda $ and $u$ of $L_{rw}$ exists <i>iff</i> : $Lu = \lambda D u$
+							<li class="fragment">
+							$ \text{$\lambda$ and $u$ of $L_{rw}$ exists iff: } \color{yellow}{Lu = \lambda D u}$
 							</li>
 							<br>
-							<li>
-								$\lambda$ and  $u$ of $L_{rw}$  <i>iff</i> :  $\lambda$ and <span style="color:yellow">$(w= D^{1/2}u)$ </span> of $L_{sym}$  
+							<li class="fragment">
+								$\lambda \text{ and }  u \text{ of } L_{rw}  \text{ iff } : \lambda \text{ and } \color{yellow}{(w= D^{1/2}u)} \text{ of } L_{sym}$  
 							</li>
 							<br>
-							<li>
-								number of connected components is like unnormalized Laplacian
+							<li class="fragment">
+								$\text{number of connected components is like unnormalized Laplacian}$
 							</li>
 						</ul>
 					</section>
@@ -160,7 +164,7 @@
 				<section>
 					<h3 style="color:green"> $\text{Spectral Clustering Algorithms}$ </h3>
 					<section>
-						<h5 style="color:red; text-align: left;">Unnormalized spectral clustering:</h5>
+						<h5 style="text-align: left;">$\color{pink}{\text{Unnormalized spectral clustering:}}$</h5>
 						<small text-align="right"><code class="hljs" data-trim contenteditable>
 							<b style="color:green">Input:</b>Similarity matrix $S \in R^{nxn}$ , number $k$ of clusters to construct.<br>
 							<ul>
@@ -177,7 +181,7 @@
 					</code></small>
 					</section>
 					<section>
-						<h5 style="color:red; text-align: left;">Normalized spectral clustering(Shi, Malik):</h5>
+						<h5 style="text-align: left;">$\color{pink}{\text{Normalized spectral clustering(Shi, Malik):}}$</h5>
 						<small text-align="right"><code class="hljs" data-trim contenteditable>
 						<ul>
 							<b style="color:green">Input:</b>Similarity matrix $S \in R^{nxn}$ , number $k$ of clusters to construct.<br>
@@ -192,7 +196,7 @@
 					</code></small>
 					</section>
 					<section>
-						<h5 style="color:red; text-align: left;">Normalized spectral clustering(Ng, Jordan):</h5>
+						<h5 style="text-align: left;">$\color{pink}{\text{Normalized spectral clustering(Ng, Jordan):}}$</h5>
 						<small text-align="right"><code class="hljs" data-trim contenteditable>
 						<ul>
 							<b style="color:green">Input:</b>Similarity matrix $S \in R^{nxn}$ , number $k$ of clusters to construct.<br>
@@ -214,12 +218,12 @@
 				<section>
 					<h3 style="color:green"> $\text{Two Gaussian}$</h3>
 					<section>
-						<h5 style="color:red; text-align: left;">dataset:</h5>
+						<h5 style="color:red; text-align: left;">$\text{dataset:}$</h5>
 						<img src="images/Gaussian/Gaussian.jpg" alt="" />
 					</section>
 					
 					<section>
-						<h5 style="color:red; text-align: left;">eigenValues:</h5>
+						<h5 style="color:red; text-align: left;">$\text{eigenValues:}$</h5>
 						<div id="images_hz">
 							<img src="images/Gaussian/eigenValues M(1).jpg" alt="" />
 							<img src="images/Gaussian/eigenValues M(2).jpg" alt="" />
@@ -228,7 +232,7 @@
 					</section>
 					
 					<section>
-						<h5 style="color:red; text-align: left;">eigenVectors:</h5>
+						<h5 style="color:red; text-align: left;">$\text{eigenVectors:}$</h5>
 						<div id="images_hz">
 							<img src="images/Gaussian/eigenVectos M(1).jpg" alt="" />
 							<img src="images/Gaussian/eigenVectos M(2).jpg" alt="" />
@@ -237,7 +241,7 @@
 					</section>
 
 					<section>
-						<h5 style="color:red; text-align: left;">representation:</h5>
+						<h5 style="color:red; text-align: left;">$\text{representation:}$</h5>
 						<div id="images_hz">
 							<img src="images/Gaussian/new representation M(1).jpg" alt="" />
 							<img src="images/Gaussian/new representation M(2).jpg" alt="" />
@@ -251,12 +255,12 @@
 				<section>
 					<h3 style="color:green"> $\text{Two Disks}$</h3>
 					<section>
-						<h5 style="color:red; text-align: left;">dataset:</h5>
+						<h5 style="color:red; text-align: left;">$\text{dataset:}$</h5>
 						<img src="images/Disk/Disks.jpg" alt="" />
 					</section>
 					
 					<section>
-						<h5 style="color:red; text-align: left;">eigenValues:</h5>
+						<h5 style="color:red; text-align: left;">$\text{eigenValues:}$</h5>
 						<div id="images_hz">
 							<img src="images/Disk/eigenValues M(1).jpg" alt="" />
 							<img src="images/Disk/eigenValues M(2).jpg" alt="" />
@@ -265,7 +269,7 @@
 					</section>
 					
 					<section>
-						<h5 style="color:red; text-align: left;">eigenVectors:</h5>
+						<h5 style="color:red; text-align: left;">$\text{eigenVectors:}$</h5>
 						<div id="images_hz">
 							<img src="images/Disk/eigenVectos M(1).jpg" alt="" />
 							<img src="images/Disk/eigenVectos M(2).jpg" alt="" />
@@ -274,7 +278,7 @@
 					</section>
 
 					<section>
-						<h5 style="color:red; text-align: left;">representation:</h5>
+						<h5 style="color:red; text-align: left;">$\text{representation:}$</h5>
 						<div id="images_hz">
 							<img src="images/Disk/new representation M(1).jpg" alt="" />
 							<img src="images/Disk/new representation M(2).jpg" alt="" />
@@ -287,12 +291,12 @@
 				<section>
 					<h3 style="color:green"> $\text{Two parabola}$</h3>
 					<section>
-						<h5 style="color:red; text-align: left;">dataset:</h5>
+						<h5 style="color:red; text-align: left;">$\text{dataset:}$</h5>
 						<img src="images/Parabola/Parabolas	.jpg" alt="" />
 					</section>
 					
 					<section>
-						<h5 style="color:red; text-align: left;">eigenValues:</h5>
+						<h5 style="color:red; text-align: left;">$\text{eigenValues:}$</h5>
 						<div id="images_hz">
 							<img src="images/Parabola/eigenValues M(1).jpg" alt="" />
 							<img src="images/Parabola/eigenValues M(2).jpg" alt="" />
@@ -301,7 +305,7 @@
 					</section>
 					
 					<section>
-						<h5 style="color:red; text-align: left;">eigenVectors:</h5>
+						<h5 style="color:red; text-align: left;">$\text{eigenVectors}$:</h5>
 						<div id="images_hz">
 							<img src="images/Parabola/eigenVectos M(1).jpg" alt="" />
 							<img src="images/Parabola/eigenVectos M(2).jpg" alt="" />
@@ -310,7 +314,7 @@
 					</section>
 
 					<section>
-						<h5 style="color:red; text-align: left;">representation:</h5>
+						<h5 style="color:red; text-align: left;">$\text{representation:}$</h5>
 						<div id="images_hz">
 							<img src="images/Parabola/new representation M(1).jpg" alt="" />
 							<img src="images/Parabola/new representation M(2).jpg" alt="" />
@@ -345,7 +349,7 @@
 					<h3 style="color:green"> $\text{RatioCut}$</h3>
 					<section>
 						$$\min\limits_{A \subset V} RatioCut(A, \overline A)$$
-						$$ \color{pink}{\text{assume:} } \\$$
+						<h5 style="text-align: left;">$ \color{pink}{\text{assume:} } \\$</h5>
 						$$ f_i =
 							\begin{cases}
 							\sqrt{\frac{| \overline A|}{|A|} },  & \text{if } v_i \in A \\[2ex]
@@ -368,7 +372,7 @@
 					</section>
 
 					<section>
-						$$ \color{red}{\text{two Constraints:}} \\$$
+						<h5 style="text-align: left;">$ \color{pink}{\text{two Constraints:}} \\$</h5>
 						$$ \sum_{i=1}^n f_i = \sum_{i \in A} \sqrt \frac{|\overline A|}{|A|} - \sum_{i \in \overline A} \sqrt \frac{|A|}{|\overline A|}
 						    = |A| \sqrt \frac{|\overline A|}{|A|} - |\overline A| \sqrt \frac{|A|}{|\overline A|} = 0. \\
 						$$
@@ -377,7 +381,7 @@
 					</section>
 
 					<section>
-						$$ \color{pink}{\text{standard Model:} } \\ \\$$
+						<h5 style="text-align: left;">$ \color{pink}{\text{standard Model:} } \\ \\$</h5>
 						$$ \color{green}{\min\limits_{A \subset V} f^TLf} \\ \\
 							\text{subject to: }
 							\begin{cases}
@@ -388,7 +392,7 @@
 						$$
 					</section>
 					<section>
-						$$ \color{pink}{\text{with relaxation:} } \\ \\$$
+						<h5 style="text-align: left;">$ \color{pink}{\text{with relaxation:} } \\ \\$</h5>
 						$$ \color{green}{\min\limits_{A \subset V} f^TLf} \\ \\
 							\text{subject to: }
 							\begin{cases}
@@ -804,7 +808,7 @@ Reveal.addEventListener( 'customevent', function() {
 				center: true,
 				slideNumber: true,
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				transition: 'convex', // none/fade/slide/convex/concave/zoom
 
 				math:{
 					mathjax: 'http://cdn.mathjax.org/mathjax/latest/MathJax.js',
