@@ -51,7 +51,7 @@
  * for proofs: [reference](http://www.math.iastate.edu/thesisarchive/PhD/LiuSijiaPhDSS11.pdf)  --> chapter 3 
  * solve two weaknesses of spectral clustering: [reference](https://papers.nips.cc/paper/2766-fixing-two-weaknesses-of-the-spectral-method.pdf) --> method instead of k-means
  * diffusion maps, spectral clustering and eigenfunctions of fokker-planck operators: [reference](http://papers.nips.cc/paper/2942-diffusion-maps-spectral-clustering-and-eigenfunctions-of-fokker-planck-operators.pdf) --> euclidean distance in new representation has a meaningful description
- * consistency of spectral clustering: [reference](http://www.kyb.mpg.de/fileadmin/user_upload/files/publications/pdfs/pdf3199.pdf)
+ * consistency of spectral clustering: [annals of statistics 2008](http://www.kyb.mpg.de/fileadmin/user_upload/files/publications/pdfs/pdf3199.pdf)
  * limits of spectral clustering: [reference](http://www.kyb.mpg.de/fileadmin/user_upload/files/publications/pdfs/pdf2775.pdf)
  * random walk survey: [reference](http://www.cs.elte.hu/~lovasz/erdos.pdf)
  * kdd bipartite spectral: [reference](http://www.cs.utexas.edu/users/inderjit/public_papers/kdd_bipartite.pdf)
@@ -67,6 +67,8 @@
 
  * good review: [this](http://www.cs.kent.edu/~jin/DM08/cluster.pdf)
  * validation methods: [this](http://www.cs.kent.edu/~jin/DM08/ClusterValidation.pdf)
+ * kernel and spectral: [this](http://people.bu.edu/bkulis/pubs/spectral_techreport.pdf)
+ * Spectral Clustering with Purturbed Data: [nips 2009](http://papers.nips.cc/paper/3480-spectral-clustering-with-perturbed-data.pdf)
  * ...
 
 
@@ -101,6 +103,8 @@
 #### **base papers:**
  * [SCORE](http://www.stat.cmu.edu/tr/SCORE.pdf)
  * [On Spectral Clustering](http://ai.stanford.edu/~ang/papers/nips01-spectral.pdf)
+ * [Learnng Spectral Clustering](http://machinelearning.wustl.edu/mlpapers/paper_files/NIPS2003_AA39.pdf)
+ * [Multiple non-redundant spectral clustering views](http://machinelearning.wustl.edu/mlpapers/paper_files/icml2010_NiuDJ10.pdf)
 
 ---
 
@@ -109,5 +113,7 @@
  * __good papers:__ [University of Washington](http://www.stat.washington.edu/spectral/)
  * __regularized spectral clustering:__[jmlr](http://www.stat.washington.edu/mmp/Papers/jmlr-reg-super-learning-revised.pdf)
  * __model based clustering(select number of clusters):__ [University of Mishigan](http://www.dtic.mil/cgi-bin/GetTRDoc?AD=ADA458798)
+ * __statistical view of marginal spectral clustering:__ [Jordan](http://www.cs.berkeley.edu/~jordan/papers/zhang-jordan-statsci08.pdf)
+ * __spectral dimension reduction:__ [Jordan 2011](http://machinelearning.wustl.edu/mlpapers/paper_files/AISTATS2011_NiuDJ11.pdf)
 
 

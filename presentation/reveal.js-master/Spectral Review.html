@@ -103,6 +103,10 @@
 							</li>
 						</ul>
 					</section>
+
+					<section>
+						<img src="images/spectral method2.JPG">
+					</section>
 				</section>
 
 				<!-- 4 -->
@@ -337,6 +341,10 @@
 					</section>
 
 					<section>
+						<img src="images\good cut.jpg">
+					</section>
+
+					<section>
 						$$ RatioCut(A_1,...,A_k) := \frac{1}{2} \sum_{i=1}^k \frac{W(A_i, \overline A_i)}{|A_i|}
 						   = \color{yellow}{\sum_{i=1}^k \frac{cut(A_i, \overline A_i)}{|A_i|} } $$ <br>
 						$$ Ncut(A_1,...,A_k) := \frac{1}{2} \sum_{i=1}^k \frac{W(A_i, \overline A_i)}{vol(A_i)} 
@@ -391,6 +399,7 @@
 							\end{cases}
 						$$
 					</section>
+
 					<section>
 						<h5 style="text-align: left;">$ \color{pink}{\text{with relaxation:} } \\ \\$</h5>
 						$$ \color{green}{\min\limits_{A \subset V} f^TLf} \\ \\
@@ -417,12 +426,23 @@
 						$$
 						<h5 style="text-align: left;">$\color{pink}{\text{then:}}$</h5>
 						$$ h_i^TLh_i = \frac{cut(A_i,\overline A_i)}{|A_i|} \\ 
-						   h_i^TLh_i = (H^TLH)_{ii}
+						   h_i^TLh_i = (H^TLH)_{ii} 
 						$$
 					</section>
 
 					<section>
 						<h5 style="text-align: left;">$\color{pink}{\text{Standard Form:}}$</h5>
+						$$  \color{green}{\min\limits_{A_1,A_2,...,A_k} Tr(H^TLH)} \\ \\
+							\text{subject to: }
+							\begin{cases}
+							H^TH = I \\
+						   	h_{ij} = \frac{1}{\sqrt{|A_j|}} \text{ or } 0.
+							\end{cases}
+						$$
+					</section>
+
+					<section>
+						<h5 style="text-align: left;">$\color{pink}{\text{Relaxation:}}$</h5>
 						$$  \color{green}{\min\limits_{A_1,A_2,...,A_k} Tr(H^TLH)} \\ \\
 							\text{subject to: }
 							\begin{cases}
@@ -432,9 +452,215 @@
 					</section>
 				</section>
 
+				<!-- 12 -->
+				<section>
+					<h3 style="color:green"> $\text{Ncut}$</h3>
+					<section>
+						<h5 style="text-align: left;">$ \color{pink}{\text{assume:} } \\$</h5>
+						$$ f_i =
+							\begin{cases}
+							\sqrt{\frac{vol(\overline A)}{vol(A)} }  & \text{if } v_i \in A \\[2ex]
+							-\sqrt{\frac{vol(A)}{vol(\overline A)} } & \text{if } v_i \in \overline A
+							\end{cases}$$
+					</section>
+
+					<section>
+						<h5 style="text-align: left;">$ \color{pink}{\text{standard Model:} } \\ \\$</h5>
+						$$ \color{green}{\min\limits_{f \in R^n} f^TLf} \\ \\
+							\text{subject to: }
+							\begin{cases}
+							f_i = \sqrt{\frac{vol(\overline A)}{vol(A)} } \ or \  -\sqrt{\frac{vol(A)}{vol(\overline A)} } \\
+							Df \bot 1 \\
+							f^TDf = vol(V)
+							\end{cases}
+						$$
+					</section>
+
+					<section>
+						<h5 style="text-align: left;">$ \color{pink}{\text{with relaxation:} } \\ \\$</h5>
+						$$ \color{green}{\min\limits_{f \in R^n} f^TLf} \\ \\
+							\text{subject to: }
+							\begin{cases}
+							Df \bot 1 \\
+							f^TDf = vol(V)
+							\end{cases}
+						$$
+					</section>
+
+					<section>
+						<h5 style="text-align: left;">$ \color{pink}{\text{by:} }$</h5>
+						$$
+							g := D^{1/2} f
+						$$
+						<h5 style="text-align: left;">$ \color{pink}{\text{we have:} }$</h5>
+
+						$$ \color{green}{\min\limits_{g \in R^n } g^T D^{-1/2} L D^{-1/2}g } \\ \\
+							\text{subject to: }
+							\begin{cases}
+							g \bot D^{1/2}1 \\
+							||g||^2 = vol(V)
+							\end{cases}
+						$$
+					</section>
+
+					<section>
+						
+						<h5 style="text-align: left;">$ \color{pink}{\text{some hint:} }$</h5>
+						<ul>
+							<li>$L_{sym} = D^{-1/2}LD^{-1/2}$</li>
+							<li>$D^{1/2}1 \text{is the first eigenVector of $L_sym$.}$</li>
+							<li>$\text{vol(V) is constant.}$</li>
+							<li>$\text{solution: second eigenvector of $L_sym$}$</li>
+							<li>$ \color{yellow}{f = D^{-1/2} g} : \text{$f$ is second eigenvector of $L_{rw}$} \\ \text{or generalized eigenvector of } Lu = \lambda Du$</li>
+						</ul>
+					</section>
+				</section>
+
+				<!-- 13 -->
+				<section>
+					<h3 style="color:green"> $\text{Ncut for arbitrary $k$}$</h3>
+					<section>
+						<h5 style="text-align: left;">$\color{pink}{\text{assume:}}$</h5>
+						$$ h_{i,j} = \begin{cases}
+							\frac{1}{\sqrt{vol(A_j)}} & \text{if } v_i \in A_j \\
+							0 & \text{otherwise}
+							\end{cases}
+						 \ \ \ (i= 1,...,n; j=1,...,k)
+						$$
+					</section>
+
+					<section>
+						<h5 style="text-align: left;">$\color{pink}{\text{Standard Form:}}$</h5>
+						$$  \color{green}{\min\limits_{A_1,A_2,...,A_k} Tr(H^TLH)} \\ \\
+							\text{subject to: }
+							\begin{cases}
+							H^TDH = I \\
+						   	h_{ij} = \frac{1}{\sqrt{vol(A_j)}} \text{ or } 0.
+							\end{cases}
+						$$
+					</section>
+
+					<section>
+						<h5 style="text-align: left;">$\color{pink}{\text{Relaxation and }T = D^{1/2}H:}$</h5>
+						$$  \color{green}{\min\limits_{A_1,A_2,...,A_k} Tr(T^TD{-1/2}LD{-1/2}T)} \\ \\
+							\text{subject to: }
+							\begin{cases}
+							T^TT = I
+							\end{cases}
+						$$
+					</section>
+				</section>
+
+				<!-- 14 -->
+
+				<section>
+					<h3 style="color:green"> $\text{Relaxation Approach:}$</h3>
+					<section>
+						<h5 style="text-align: left;">$\color{pink}{\text{different between } \\ \text{ideal solution and relaxed one:}}$</h5>
+						<div id="images_hz">
+							<img src="images/ncut ideal.JPG">
+							<img src="images/ncut relax.JPG">
+						</div>
+					</section>
+					<section>
+						$$ \begin{cases}
+						A_1, ... , A_k \text{ is exact solution}\\
+						B_1, ... , B_k \text{ is unnormalized solution} 
+						\end{cases} \\$$
+						$$ RatioCut(B_1,...,B_k) - RatioCut(A_1, ... , A_k) \text{ can be large a lot.}$$
+						<h5 style="text-align: left;">$\color{pink}{\text{Gauttery and Miller 98:}}$</h5>
+						<img src="images/cockroach graph.jpg">					
+					</section>
+					<section>
+						<h5 style="text-align: left;">$\color{pink}{\text{Different Relaxations:}}$</h5>
+						<ul>
+							<li>$\text{semi-difinite program (Bie and Cristiani-2006)}$</li>
+							<li>$\text{nearest subspace(Jordan, Bach-JMLR 2006)}$</li>
+						</ul>
+					</section>
+				</section>
+
+				<!-- 15 -->
+
+				<section>
+					<h3 style="color:green"> $\text{Random Walk:}$</h3>
+					<section>
+						$$
+							p_{ij} = w_{ij}/d \\
+							P = D^{-1}W \\
+							\color{yellow}{\text{stationary distribution(connected and non-bipartite)}} \\
+							\pi = (\pi_1,...,\pi_n)^T , \; \pi_i = d_i/ vol(V)
+						$$
+					</section>
+					<section>
+						<h5 style="text-align: left;">$\color{pink}{\text{random walk and Ncut:}}$</h5>
+						$$
+							Ncut(A,\overline A) = P(\overline A|A) + P(A|\overline A)
+						$$
+						<h5 style="text-align: left;">$\color{pink}{\text{Prove:}}$</h5>
+						$$
+							P(X_0 \in A, X_1 \in B) = \sum_{i \in A, j \in B} P(X_0=i,X_1 = j) = \sum_{i \in A, j \in B} \pi_i p_{ij}\\
+							= \sum_{i \in A, j \in B} \frac{d_i}{vol(V)}\frac{w_{ij}}{d_i} = \frac{1}{vol(V)} \sum_{i \in A, j \in B} w_ij.
+						$$
+					</section>
+				</section>
+
+				<!-- 16 -->
+				<section>
+					<h3 style="color:green"> $\text{commute distance:}$</h3>
+					
+				</section>
+
+				<!-- 17 -->
+
+				<section>
+					<h3 style="color:green"> $\text{Perturbation Theory:}$</h3>
+					
+				</section>
+
+				<section>
+					$$
+						\mathfrak{Spectral} \\
+						\mathbb{Spectral} \\
+						\Bbb{Spectral} \\
+						\mathbf{Spectral} \\
+						\mathtt{Spectral} \\
+						\mathrm{Spectral} \\
+						\mathsf{Spectral} \\
+						\mathcal{Spectral} \\
+						\mathscr{Spectral} \\
+						Spectral \\
+						\mathbb{1}
+					$$
+				</section>
+				<section>
+					$$
+						\mathfrak{There \; are \; lots \; of \; Dragons \; here.} \\
+					$$
+				</section>
+				<section>
+					$$
+						\color{gray}{text} \\
+						\color{silver}{text} \\
+						\color{white}{text} \\
+						\color{maroon}{text} \\
+						\color{red}{text} \\
+						\color{yellow}{text} \\
+						\color{lime}{text} \\
+						\color{olive}{text} \\
+						\color{green}{text} \\
+						\color{teal}{text} \\
+						\color{aqua}{text} \\
+						\color{blue}{text} \\
+						\color{navy}{text} \\
+						\color{purple}{text} \\
+						\color{fuchsia}{text} \\
+					$$
+				</section>
+
 				<section>
 						$$ W(A,B) := \sum_{i\in A,j\in B} w_{ij} $$ <br>
-						$$ |A| := the \ number \ of \ vertices \ in \ A $$ <br>
+						$$ |A| := \text{the number of vertices in $A$} $$ <br>
 						$$ vol(A) := \sum_{i\in A} d_i $$
 					</section>
 				</section>
