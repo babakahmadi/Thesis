@@ -69,6 +69,7 @@
  * validation methods: [this](http://www.cs.kent.edu/~jin/DM08/ClusterValidation.pdf)
  * kernel and spectral: [this](http://people.bu.edu/bkulis/pubs/spectral_techreport.pdf)
  * Spectral Clustering with Purturbed Data: [nips 2009](http://papers.nips.cc/paper/3480-spectral-clustering-with-perturbed-data.pdf)
+ * Spectral graph theory: [chung 97](http://www.meduniwien.ac.at/user/yll.haxhimusa/prip/praktikas/spectral_pyramid_praktikum/spectral_graph_chapter.pdf)
  * ...
 
 
@@ -92,6 +93,17 @@
  * wine: [link](https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data)
  * Dermatology: [link](http://archive.ics.uci.edu/ml/datasets/Dermatology?ref=datanews.io)
  * Letter Recognition: [link](https://archive.ics.uci.edu/ml/datasets/Letter+Recognition)
+ * handWritten digits: [link](http://yann.lecun.com/exdb/mnist/)
+
+
+#### __Constructing Similarity Graph:__
+ * local clustering on multiple manifold: [link](http://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/tnn11smmc.pdf)
+ * based on random walk: [link](http://ftp.cs.rochester.edu/u/qyou/papers/qzy_FCSC.pdf)
+ * based on neighbor propagation: [link](http://ac.els-cdn.com/S0925231212005000/1-s2.0-S0925231212005000-main.pdf?_tid=34cf8d5c-007a-11e6-9438-00000aacb362&acdnat=1460443735_c50910ef570b53dee8a5de41d6da18c6)
+ * based on newton equations: [link](http://cs.uoi.gr/~lagaris/papers/Newton2.pdf)
+ * Local density adaptive: [link](http://www.sciencedirect.com/science/article/pii/S0167865510003181?np=y)
+ * density sensitive: [link](http://www.sciencedirect.com/science/article/pii/S0950705111000219)
+
 
 
 #### **for documentation:**

@@ -84,7 +84,9 @@
 						<ul>
 							<li class="fragment">$\epsilon\text{-neighborhood graph}$
 								<ul> <small style='color:yellow'> 
-									$\text{we connect all points whose pairwise distances are smaller than } \epsilon$
+									<li>$\text{we connect all points whose pairwise distances are smaller than } \epsilon$</li>
+									<li>$\text{1- $\epsilon$ = max weight in MST.} $</li>
+									<li>$\text{2- $\epsilon$ = mean weight of kth neighbours. }$</li>
 								</small></ul>
 							</li>
 							<li class="fragment">$k\text{-nearest neighbor graph}$
@@ -99,6 +101,13 @@
 								<ul><small style="color:yellow">
 									$\text{between each two points we add edge based on some functions}$<br><br>
 									$$s(x_i,x_j) = exp(\frac{-||x_i-x_j||^2}{2\sigma^2})$$
+								</small></ul>
+							</li>
+							<li class="fragment">$\text{Proximity Graph}$
+								<ul><small style="color:yellow">
+									$\text{Relative Neighborhood Graph: }d_{ij} \le max\{  d_{ip},d_{jp} \}$
+									$\text{Gabriel Graph: } d_{ij} \le min\{  \sqrt{d_{ip}^2 + d_{pj}^2} \}$
+
 								</small></ul>
 							</li>
 						</ul>
@@ -175,8 +184,8 @@
 								<li>Construct a similarity graph. Let W be its weighted adjacency matrix.</li>
 								<li>Compute the unnormalized Laplacian $L$.</li>
 								<li>Compute the first k eigenvectors $u_1, ... , u_k$ of $L$.</li>
-								<li>Let U n×k be the matrix containing the vectors $u_1, ... , u_k$ as columns.</li>
-								<li>For $i = 1, ... , n$, let yik be the vector corresponding to the i-th row of U.</li>
+								<li>Let $U \in R^{n×k}$ be the matrix containing the vectors $u_1, ... , u_k$ as columns.</li>
+								<li>For $i = 1, ... , n$, let $y_{ik}$ be the vector corresponding to the i-th row of $U$.</li>
 								<li>Cluster the points $(y_i)i=1,...,n$ in $k$ with the $k$-means algorithm intoclusters $C_1, ... , C_k$.</li>
 							</ul><br>
 
@@ -192,8 +201,8 @@
 							<li>Construct a similarity graph.Let $W$ be its weighted adjacency matrix.</li>
 							<li>Compute the unnormalized Laplacian $L$.</li>
 							<li>Compute the first $k$ eigenvectors $u_1, . . . , u_k$ of the generalized eigenproblem $Lu = \lambda Du$.</li>
-							<li>Let U n×k be the matrix containing the vectors $u_1, . . . , u_k$ as columns.</li>
-							<li>For $i = 1, ... , n$, let yi k be the vector corresponding to the i-th row of U.</li>
+							<li>Let $U \in R^{n×k}$ be the matrix containing the vectors $u_1, . . . , u_k$ as columns.</li>
+							<li>For $i = 1, ... , n$, let yi k be the vector corresponding to the i-th row of $U$.</li>
 							<li>Cluster the points $(y_i)i=1,...,n$ in $k$ with the $k$-means algorithm into clusters $C_1, . . . , C_k$.</li>
 						</ul><br>
 						<b style="color:green">Output:</b> Clusters $A_1, . . . , A_k$ with $A_i = \{j | y_j \in C_i \}$.
@@ -207,7 +216,7 @@
 							<li>Construct a similarity graph. Let $W$ be its weighted adjacency matrix.</li>
 							<li>Compute the normalized Laplacian $L_{sym}$.</li>
 							<li>Compute the first k eigenvectors $u_1, ... , u_k$ of $L_{sym}$.</li>
-							<li>Let $U \in R^{n×k}$ be the matrix containing the vectors $u_1, ... , u_k} as columns.</li>
+							<li>Let $U \in R^{n×k}$ be the matrix containing the vectors $u_1, ... , u_k$} as columns.</li>
 							<li>Form the matrix $T \in R^{n×k}$ from $U$ by normalizing the rows to norm $1$, that is set $t_{ij}=u_{ij}/(\sum_k u_{ik}^2)^{1/2}$</li>
 							<li>For $i = 1, ... , n$, let $y_i \in R^k$ be the vector corresponding to the i-th row of $T$.</li>
 							<li>Cluster the points $(y_i)_{i=1,...,n}$ with the $k$-means algorithm into clusters $C_1, ... , C_k$.</li>
@@ -215,6 +224,7 @@
 						</ul><br>
 						<b style="color:green">Output:</b> Clusters $A_1, . . . , A_k$ with $A_i = \{j | y_j \in C_i \}$.
 					</code></small>
+					<h5 style="text-align: left;"><small>$\color{green}{\text{Similarity to kernel PCA (Use W instead of L)}}$</small></h5>
 					</section>
 				</section>
 
