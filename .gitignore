@@ -1,0 +1,5 @@
+implementation/data/*
+implementation/images/*
+*.png
+*.jpg
+

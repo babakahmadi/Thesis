@@ -31,7 +31,7 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
-		
+
 
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -71,9 +71,9 @@
 						    d_1     & \cdots & 0 \\
 						     \vdots & \ddots & 0 \\
 						     0      & 0      & d_n \\
-						  	\end{pmatrix} $$ 
+						  	\end{pmatrix} $$
 						$$ |A| := \text{number of vertices in } A $$ <br>
-						$$ W(A,B) := \sum_{i\in A,j\in B} w_{ij} $$ 
+						$$ W(A,B) := \sum_{i\in A,j\in B} w_{ij} $$
 						$$ vol(A) := \sum_{i\in A} d_i $$
 					</section>
 				</section>
@@ -83,14 +83,14 @@
 					<section>
 						<ul>
 							<li class="fragment">$\epsilon\text{-neighborhood graph}$
-								<ul> <small style='color:yellow'> 
+								<ul> <small style='color:yellow'>
 									<li>$\text{we connect all points whose pairwise distances are smaller than } \epsilon$</li>
 									<li>$\text{1- $\epsilon$ = max weight in MST.} $</li>
 									<li>$\text{2- $\epsilon$ = mean weight of kth neighbours. }$</li>
 								</small></ul>
 							</li>
 							<li class="fragment">$k\text{-nearest neighbor graph}$
-								<ul> 
+								<ul>
 									<small>$\color{yellow}{\text{find first $k$ neighbors for each vertex}}$
 										<li>$k\text{-nearest neighbors}$</li>
 										<li>$\text{mutual $k$-nearest neighbor}$</li>
@@ -132,7 +132,7 @@
 					</section>
 					<section>
 						<h5 style="text-align: left;">$\color{pink}{\text{Proof:}}$</h5>
-						$$ f^TLf = f^TDf - f^TWf \\ =  \sum_{i=1}^n d_i f_i^2 - \sum_{i,j=1}^n f_i f_j w_{ij} \\ 
+						$$ f^TLf = f^TDf - f^TWf \\ =  \sum_{i=1}^n d_i f_i^2 - \sum_{i,j=1}^n f_i f_j w_{ij} \\
 						 = \frac{1}{2} (\sum_{i=1}^n d_i f_i^2 - 2 \sum_{i,j=1}^n f_if_j w_{ij} + \sum_{j=1}^n d_j f_j^2) \\
 						 = \frac{1}{2} \sum_{i,j=1}^n w_{ij}(f_i-f_j)^2.
 						$$
@@ -145,7 +145,7 @@
 						    L_1     & \cdots & 0 \\
 						     \vdots & \ddots & 0 \\
 						     0      & 0      & L_k \\
-						  	\end{pmatrix} $$ 
+						  	\end{pmatrix} $$
 					</section>
 					<section>
 						<h5 style="color:red; text-align: left;">$\color{pink}{\text{Normalized Laplacian:}}$</h5>
@@ -164,7 +164,7 @@
 							</li>
 							<br>
 							<li class="fragment">
-								$\lambda \text{ and }  u \text{ of } L_{rw}  \text{ iff } : \lambda \text{ and } \color{yellow}{(w= D^{1/2}u)} \text{ of } L_{sym}$  
+								$\lambda \text{ and }  u \text{ of } L_{rw}  \text{ iff } : \lambda \text{ and } \color{yellow}{(w= D^{1/2}u)} \text{ of } L_{sym}$
 							</li>
 							<br>
 							<li class="fragment">
@@ -235,7 +235,7 @@
 						<h5 style="color:red; text-align: left;">$\text{dataset:}$</h5>
 						<img src="images/Gaussian/Gaussian.jpg" alt="" />
 					</section>
-					
+
 					<section>
 						<h5 style="color:red; text-align: left;">$\text{eigenValues:}$</h5>
 						<div id="images_hz">
@@ -244,7 +244,7 @@
 							<img src="images/Gaussian/eigenValues M(3).jpg" alt="" />
 						</div>
 					</section>
-					
+
 					<section>
 						<h5 style="color:red; text-align: left;">$\text{eigenVectors:}$</h5>
 						<div id="images_hz">
@@ -272,7 +272,7 @@
 						<h5 style="color:red; text-align: left;">$\text{dataset:}$</h5>
 						<img src="images/Disk/Disks.jpg" alt="" />
 					</section>
-					
+
 					<section>
 						<h5 style="color:red; text-align: left;">$\text{eigenValues:}$</h5>
 						<div id="images_hz">
@@ -281,7 +281,7 @@
 							<img src="images/Disk/eigenValues M(3).jpg" alt="" />
 						</div>
 					</section>
-					
+
 					<section>
 						<h5 style="color:red; text-align: left;">$\text{eigenVectors:}$</h5>
 						<div id="images_hz">
@@ -308,7 +308,7 @@
 						<h5 style="color:red; text-align: left;">$\text{dataset:}$</h5>
 						<img src="images/Parabola/Parabolas	.jpg" alt="" />
 					</section>
-					
+
 					<section>
 						<h5 style="color:red; text-align: left;">$\text{eigenValues:}$</h5>
 						<div id="images_hz">
@@ -317,7 +317,7 @@
 							<img src="images/Parabola/eigenValues M(3).jpg" alt="" />
 						</div>
 					</section>
-					
+
 					<section>
 						<h5 style="color:red; text-align: left;">$\text{eigenVectors}$:</h5>
 						<div id="images_hz">
@@ -342,7 +342,7 @@
 				<section>
 					<h3 style="color:green"> $\text{Graph Cut}$</h3>
 					<section>
-						$$ cut(A_i,\overline A_i) := W(A_i,\overline A_i) $$ 
+						$$ cut(A_i,\overline A_i) := W(A_i,\overline A_i) $$
 						$$ cut(A_1,...,A_k) := \frac{1}{2} \sum_{i=1}^k W(A_i,\overline A_i) $$ <br>
 						<div id="images_hz">
 							<img src="images/graph cut.gif">
@@ -357,7 +357,7 @@
 					<section>
 						$$ RatioCut(A_1,...,A_k) := \frac{1}{2} \sum_{i=1}^k \frac{W(A_i, \overline A_i)}{|A_i|}
 						   = \color{yellow}{\sum_{i=1}^k \frac{cut(A_i, \overline A_i)}{|A_i|} } $$ <br>
-						$$ Ncut(A_1,...,A_k) := \frac{1}{2} \sum_{i=1}^k \frac{W(A_i, \overline A_i)}{vol(A_i)} 
+						$$ Ncut(A_1,...,A_k) := \frac{1}{2} \sum_{i=1}^k \frac{W(A_i, \overline A_i)}{vol(A_i)}
 						   =  \color{yellow}{\sum_{i=1}^k \frac{cut(A_i,\overline A_i)}{vol(A_i)} } $$ <br>
 					</section>
 				</section>
@@ -405,7 +405,7 @@
 							\begin{cases}
 							f \bot \Bbb{1} \\
 							f_i = \sqrt{\frac{| \overline A|}{|A|} } \ or \  -\sqrt{\frac{|A|}{| \overline A|} } \\
-							||f|| = \sqrt n	
+							||f|| = \sqrt n
 							\end{cases}
 						$$
 					</section>
@@ -416,7 +416,7 @@
 							\text{subject to: }
 							\begin{cases}
 							f \bot \Bbb{1} \\
-							||f|| = \sqrt n	
+							||f|| = \sqrt n
 							\end{cases}
 						$$
 					</section>
@@ -435,8 +435,8 @@
 						 \ \ \ (i= 1,...,n; j=1,...,k)
 						$$
 						<h5 style="text-align: left;">$\color{pink}{\text{then:}}$</h5>
-						$$ h_i^TLh_i = \frac{cut(A_i,\overline A_i)}{|A_i|} \\ 
-						   h_i^TLh_i = (H^TLH)_{ii} 
+						$$ h_i^TLh_i = \frac{cut(A_i,\overline A_i)}{|A_i|} \\
+						   h_i^TLh_i = (H^TLH)_{ii}
 						$$
 					</section>
 
@@ -514,7 +514,7 @@
 					</section>
 
 					<section>
-						
+
 						<h5 style="text-align: left;">$ \color{pink}{\text{some hint:} }$</h5>
 						<ul>
 							<li>$L_{sym} = D^{-1/2}LD^{-1/2}$</li>
@@ -575,11 +575,11 @@
 					<section>
 						$$ \begin{cases}
 						A_1, ... , A_k \text{ is exact solution}\\
-						B_1, ... , B_k \text{ is unnormalized solution} 
+						B_1, ... , B_k \text{ is unnormalized solution}
 						\end{cases} \\$$
 						$$ RatioCut(B_1,...,B_k) - RatioCut(A_1, ... , A_k) \text{ can be large a lot.}$$
 						<h5 style="text-align: left;">$\color{pink}{\text{Gauttery and Miller 98:}}$</h5>
-						<img src="images/cockroach graph.jpg">					
+						<img src="images/cockroach graph.jpg">
 					</section>
 					<section>
 						<h5 style="text-align: left;">$\color{pink}{\text{Different Relaxations:}}$</h5>
@@ -618,14 +618,14 @@
 				<!-- 16 -->
 				<section>
 					<h3 style="color:green"> $\text{commute distance:}$</h3>
-					
+
 				</section>
 
 				<!-- 17 -->
 
 				<section>
 					<h3 style="color:green"> $\text{Perturbation Theory:}$</h3>
-					
+
 				</section>
 
 				<section>
@@ -649,7 +649,9 @@
 					$$
 				</section>
 				<section>
+					$$\frac{N}{L}$$
 					$$
+
 						\color{gray}{text} \\
 						\color{silver}{text} \\
 						\color{white}{text} \\
